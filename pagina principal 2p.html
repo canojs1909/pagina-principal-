@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Principal 2P</title>
+  <link rel="stylesheet" href="CSS PAGINA PRINCIPAL.css" />
+
+  <script>
+    function mostrarFechaHora() {
+      const ahora = new Date();
+      const opciones = {
+        weekday: 'long', year: 'numeric', month: 'long',
+        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+      };
+      const formato = ahora.toLocaleDateString('es-ES', opciones);
+      const el = document.getElementById("fecha-hora");
+      if (el) el.textContent = "Fecha y hora actual: " + formato;
+    }
+
+    window.addEventListener('load', function () {
+      mostrarFechaHora();
+      setInterval(mostrarFechaHora, 1000);   
+    });
+  </script>
+</head>
+
+<body>
+  <div class="pagina">
+
+    <!-- CABECERA -->
+    <header class="cabecera">
+      <div class="cabecera-imgs">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAACUCAMAAABP2deIAAAAb1BMVEX39/f///+nHx/6+vr8//+hAACcAAD5/PymFhalEA6nHR359fXlzs7jxsamGRnq2djx4+P06enfvb3DgYGpLy/MmZq+dXXatba4Zma+b2/Hjo3MoJ+1WlrYr6+nIyOyTk2tRUanNjWjKSWqPz6UAACVXebPAAANLElEQVR4nOWdCbOiOBCAiTkJcvs8UDzf//+NmwMwnIa3U2XQnp2qWRUlXzqdTqfTeGCmQOdlbou82Rc4L5+HgMKZF3wcApplaN4VH4jgt5j3ox+IAOMTnDMYPhHByr8nMwbDRyJYRWRnz+AzEaw4tjcIi0Qg/BlvzNHRCFYrfAno5yJIpiQtNYIVY7HdYFgeArj+JVNSERCDgZRWDJaHgO6aRr4SvLVhsDwEqPBtEdgZhAUiODBrBFYGwXEEqN8AtOH2CIRBOL5i4DQCFOT3oPcqnoNAGoQXa0eHEVBwxL6/735Dam0NawaPdNIgOIsAonAj+xt3Zja4JjMRCIOwnhoMriJA8UUrPCdJqw9pOVcL5Hf8TNyHmwhosCW13Y9urS5Euf2c+BS890YNgosIKDwSo524MBmA04w58Sn+ZtQgOIgAZZuW0edkbfQg2ER/QbBiZD3CwD0EaNud9XhkvA1nW8P6W37j4bHgHgL607N3z5kRovSPCCKSLUYLvIFGYhkEogjA8Pg3UzAVS3MQwdAigKQIrosLwfhvBKYiqg4igOv+zM8uxRn7f2u+DKMtzS+AA0Y/8uetDFrX4nBp3iHqG8T/I/59eWsEOHslNCX48GJjxUUEHtj/xQkelOnlgbsIYPiv1IDh8OUdOInAA/e/Gz9T8HXaDDiM4B8ZRJwji/1VNxEMeYiNcObjKWk+R0qrX3cCQV9ZwUiYmIvW30/FMRyV9U+zmzQZK3ILQbru6isNHgNLYo7xpghThBClUPwHqdpEFP+kUP+P+IvqPcXrgvYUwYWcMmTeL01YXwkYeRwTgNQkDylSQvvB4WpbFefANs3i/QiomAEZvpWwUVtBoKcDPjnESDYYIgDSdXZUUoZxAFCLg0JgawYcQYDUioBjVgR6PNCEdAn4JE/lmxQEYf7wydP2EXzbllI5TAQ+WVSWCTrieqSTbSrGgyDQcQoi+QYU/R+UYrnsR623eeRjci+SeiTJXKPLgIF1GEHwDJNxqe2gS4DjW6wCJvGB4JG4objystMjaXkZZ2jbWg74+HLuECAFEKqBwmsTLTEdA7+GwvCqhFQisMsqcAYBjbs+EGsTYBupAnJjJaohkfuh2FVewM/2IYYGr9TlvhPTAJwzCBxAAK7TIXE1rCnMKwMpej/PtGNAlW+AEAjWxY1oChxf5thBJxC8yhhRsztac18PeHxYI9TrZIpAUjCtJez1XrpjCOD0RrnKnANHbR99nKdgRMkhgmW1/4JPtl6hEwhQMakEkgCEB6y7V3gGU99FUekrZfE3yTwG70QA064H0CGAPBg8tL97TV6ue1GQK0WIcDyLwTsRoNNUfAxvhQ54D/kRMTH2TcBQY0K1H82J5Rrx/Qhguhln4J8kgZv8AMO2TaLBBc9m8E4EYqDvx4wBPwfifaUD/iNFfWla3X4ZbDWDGWPhrQhkhGzEHMg2ADVQfOEarE/7jhQ6KAi9cps/ZVskQJlYzlPrIwlvRiAm/YHQgDAEP6gKIPpXKNfTrCOYhFQOpTP2TcFkpxmwi/VQeDcCj6a3/mCIHkB0vfSd2Q2aQXW5ONCOIiepuPim+XG5WqjVB+Ty0/bZ+G9H4EE9fDvDQDT8HskVUWAi8POy3FU+tZgzafU6P+/KsspB8k9IDyBrc/B+BOIeyk6MxN+KYaD7UmXH1E1d4QzROtmInRAtagSAosrX5htxj4reeUEI5CrANAicBNUSUpoEz9ACnNEm30oMlnq7QSBolhsSAUzIqpum5TgCGTE2JgZf3Du4iIayq27EMIIroi0E1XkEBqqtGI7tZgU3ELSzCXFaqT5JdBvoMAIADASi6yuR16BbpMfTchBAwz1g4s6B3Efw86oJI1rQGghec1pJXaEyVeSksRQE1NxKxmuoEo2lSZhEgFpaoD7YaL76VMNwAQjMcSB9AiQbUNlCOwRpEKRBmsq/GupaWYN+Kr+rCICxf4aPVCXcG/dvgeD3uauqwSl7ikuLidEJBK3MGjGAVba5YcxGzKE5IxCVjsb1pNhcwy42G3ouIDBNgWwCUj34zDweM4eGFhQ/1V50jcADMn5iYxBdQADNAJo0Yam4e35+TuoWCJDpHSpR9gXvHM4ygSoEjhAVdmxtZNWSUJ+5NSd1m0mxPqrRIFCqZeMavAkBDNI4K4v8dLnJVZ7hHgvV1f1nZE2PIaBTCDyIjenSOQRiIay3wxjjnf2zm1ghibVgy7sdmxEmtUBbFAtj8C4EYwEzthernEiYgo2hwWMzwgsE8lgrDl+uE1xDIJdIiZzODgYCQwuQdptW6hNNs8+oQRA96guVSZFexsIQiFvWdqwY0gIjaiQ1AtaJaUbU6OlTqvW2hY/8HgRD+fZNw9TKv+XXDWSjcrzXi+JO9NW/PRVfOlzstDwEMVQq3ZrQadYvWaBDg6jE7Zf3gWFFBZ/odRjVQQR6TmydJwvibrEKinTSHULmq3FgNlia1SUjaB8nkzmFafxCaCfrHp4/CYG80+tk/Q5Cou5vfR6Cy/TRpKdD0PzKaqkItDkcQNDbUqobH0lhPQSey+Zwwi8IByZFJSg/dKSJpl+kXE/d3wqw1caacwjKAdeoYtD96rhKuI6HfwrGdktF1xCIpkPl1R3aty7W1F2pv0TMn/W77UtClx1k4e71M62VsD1SCvx09ZVIN1DIijey+k0bBKgg8qVo07IfaimNx04qvxuBl+b7q/DrxGq5m2/8ED9x493gr5gleEdI0iAAB18jaP2aWk+R5BWBt0WNEAIoWWfF6S5AGI4+xzIplym72EbQ1ZcWAmUYeVsLkC9JOhs1UiI8PmHiYBpmRgydiJFd9uzhEwGrPaHfFwhUfgLrTRNuIahJUGD0sbBfUAYM+G0QgV+ktcBpBDpiYrGR4ACCdh6uDP2jh4ycJUaDGgRYJ9hC+WcaAZC7CiR5vbnsBALV7c1IqPbGWyPBRACp7tlpBGrKlMZ1GQg8YNQtwxlUKRLcNz7wHAjbMMz0QnoaAVA29bVX4AoC82CGHAl6Q9BIKn+aQx9joj2+aQRqj25B26p1wVI9EtLqmBkfQiBe9i0QqAu6LqbLCJRDWIs0AihqlzczJkWM8WsE2rr0l5sOIzBLuEgjoFyDZ46FaQ5hvRSgEwiUZ2gROnUHAURmrR7Z+zLcYdQzMhA0Bm5CC/TAssw8dAIBirnp//Jz3QhcV7k3J0VayQQCdfLPMtvKBQQQHTu52DJjUOkFx1UJBmNSzCrZeaMI1IRil2XjBAKUXrrBA05SCGWSwYo9YBvBqjmiOL5GqBJXbcuivx0BygYKVsnVDVKbhFibgzkrRZ1s0a8Y6igCCHt17XSzRBfqujY4BwpBL2YutEDvMf2GYF8VwlZZl2r3jUeWw+DdCFCyGj6aI4eCcJtZwyDoVz/3aP0P8W4TOEMZWc07lvJWBOCnd0y/GQoXJE+wybe1J9Svgd+8Jt9toO7UZjOe8cCUtyLo2UFzKIjOp4kaJfZ1/qE+jtErm+ssAjRUsOTJQDpI+iS/H70u0KS+sJpc5tSweHPgrHdsvSXypJ3QA13jIn99IB2CEutjivOO778TgQcOk7XMFIP0rI/hst3YgeUaQHzVh1XJZGk/xxB4weSJXcUA0pNqGce3cPzIKkXJVptW/275cAxHELwo5KVVWvjPyvOJ8K1MwUCNd4hgeNKVkzk+jNd8dhKBSgGYEnW+CCVaxQUEfCpTo5yRymBNwy2vPEzf2it2B0ErXKR7vrNikhMiRCWpKqQzjDf7YxYnnnSF4nWZP3BdyYORfG7tAgcQ6BTRpzB87hQ5ZeoINoJFs+ckMdRJVrL5VSUTn5z+UMXDAQQwNvLwhZ6HoFv8n4u+lRCC4x2P1oBlmOSJdUkvtxA8g8cM339kaSfh4nZzCVkpJ0Rh9LbsWcWnkUisn0+7wKa0oZsI9MTIMdmHEFWL3a7HJCZEVQeOIm9dXDFR+dtS5Dlt/NhmqVWFB2cRoCNmZPVjtKKvB2Iu2JSB/AREyIuzIj9cLqfLKS/KdTBQ5GZhCDxwPq3bT8YZYKBKoFUlfVSpP/ndqsDR/2q+Iwg80OtGFHZTL7S1iPIsBdIt+Ou4dxXB0G0NF/7kYuxvDsUujruJRZ+HYKL8q3ILsE/Iv2LgJoJO/bshENYx8oUiCCyekPXZCKwqQX82Au/F+vHzEdg9IOujEaCHhRJ8NALYiyGs5O7QNyFAA2cv+P2Ccdtj/GAEdOBpgRwnICkv2MTwwQjAfuCxSZkMJaNg/bNv0vM+F8HQ/gpuStsglJDPR5Csuq5hqxzHFyDwKPjBrRUCXxknUJ/peR+MQEZKt62iDq1UAfQVCIwnq656G+XyyMo3IBB2L2NVJlHe/oqmBNKnI5APWC3kViJ7dLZHnhmIH49AbiWeMGPdhn4VAg+C9a33TFhaP1XjKxBIk9Cvg19+F4IBeZZ2+V4EtQP9vQi89Ou1wAuqpyb9fi8CutvtyrLc7f7VFy4PgVcfyfhX37dABP9a5rboP5s6DcZ5azR2AAAAAElFTkSuQmCC" alt="Logo DGETI" class="logo-izq" width="120" height="120">
+        <h1>Centros de Bachillerato Tecnológico Industrial y de Servicios No 98<br>"Eliseo Luciano Céspedes Vera"</h1>
+        <img src="se me para con calca.webp" alt="Logo CBTIS 98" class="logo-der" width="120" height="120">
+      </div>
+    </header>
+
+    
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="contenido-central">
+      <section class="contenido">
+        <iframe name="iframeContenido" src="pagina1.html" title="Contenido principal"></iframe>
+      </section>
+
+      <!-- BARRA LATERAL PARCIAL 1 -->
+      <aside class="parcial1" aria-labelledby="parcial1-title">
+        <h2 id="parcial1-title">Prácticas del Parcial 1</h2>
+        <ol>
+          <li><a class="btn" href="EDICION DE TEXTO HTML..html" target="iframeContenido">Edición de texto</a></li>
+          <li><a class="btn" href="listas de definicion y desordenadas.html" target="iframeContenido">Listas de definición y desordenadas</a></li>
+          <li><a class="btn" href="listas ordenadas.html" target="iframeContenido">Listas ordenadas</a></li>
+          <li><a class="btn" href="divisones HTML.html" target="iframeContenido">Divisiones</a></li>
+          <li><a class="btn" href="EXAMEN DE RETROALIMENTACION.html" target="iframeContenido">Examen de retroalimentación</a></li>
+          <li><a class="btn" href="Fecha y hora.html" target="iframeContenido">Fecha y hora</a></li>
+          <li><a class="btn" href="SINTAXIS BASICA HTML.html" target="iframeContenido">Sintaxis básica</a></li>
+          <li><a class="btn" href="practicas.html" target="iframeContenido">Proyecto P1</a></li>
+        </ol>
+      </aside>
+
+      <!-- BARRA LATERAL PARCIAL 2 -->
+      
+      <!-- BARRA LATERAL PARCIAL 2 -->
+      <aside class="parcial2" aria-labelledby="parcial2-title">
+        <h2 id="parcial2-title">Prácticas del Parcial 2</h2>
+        <ol>
+          <li><a class="btn-light" href="uso de css externo.html" target="iframeContenido">Uso de CSS externo</a></li>
+          <li><a class="btn-light" href="reglas css.html" target="iframeContenido">Reglas CSS</a></li>
+          <li><a class="btn-light" href="formularios.html" target="iframeContenido">Formularios HTML</a></li>
+          <li><a class="btn-light" href="formulario datos personales.html" target="iframeContenido">Formularios datos personales</a></li>
+          <li><a class="btn-light" href="formulario de texto.html" target="iframeContenido">Formulario de texto</a></li>
+          <li><a class="btn-light" href="formulario number.html" target="iframeContenido">Formularios numérico</a></li>
+          <li><a class="btn-light" href="formulario radio.html" target="iframeContenido">Formularios radio</a></li>
+          <li><a class="btn-light" href="formulario checkbox.html" target="iframeContenido">Formulario checkbox</a></li>
+          <li><a class="btn-light" href="D:\SEBASTIAN CANO WEB  5 E\carpetas para .css" target="iframeContenido">carpeta css</a></li>
+        </ol>
+      </aside>
+
+      <!-- NUEVA BARRA LATERAL PARCIAL 3 -->
+      <aside class="parcial2" aria-labelledby="parcial3-title">
+        <h2 id="parcial3-title">Prácticas del Parcial 3</h2>
+        <ol>
+          <li><a class="btn-light" href="practica script interno.html" target="iframeContenido">Script interno</a></li>
+          <li><a class="btn-light" href="practica script externo.html" target="iframeContenido">Script externo</a></li>
+          <li><a class="btn-light" href="valiacion de datos de un formulario.html" target="iframeContenido">validacion de datos de formulario</a></li>
+          <li><a class="btn-light" href="D:\SEBASTIAN CANO WEB  5 E\carpeta para scripts externo" target="iframeContenido">Archivos Js</a></li>
+      
+        </ol>
+      </aside>
+
+      <!-- ASIDE DE OPINIONES (a la derecha) -->
+      <aside class="feedback-aside" aria-labelledby="feedback-title">
+
+      <!-- ASIDE DE OPINIONES (a la derecha) -->
+      <aside class="feedback-aside" aria-labelledby="feedback-title">
+        <h3 id="feedback-title"> </h3>
+
+        <form id="feedback-form" action="https://formspree.io/f/xeorvzjv" method="post" novalidate>
+          <div style="margin-bottom:8px;">
+            
+            <section id="opinion">
+  <h2>Tu opinión sobre la página</h2>
+  <form>
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Correo:</label><br>
+    <input type="email" name="correo" required><br><br>
+
+    <label>¿Cómo calificarías esta página?</label><br>
+    <select name="valoracion">
+      <option>⭐⭐⭐⭐⭐ Excelente</option>
+      <option>⭐⭐⭐⭐ Muy buena</option>
+      <option>⭐⭐⭐ Buena</option>
+      <option>⭐⭐ Regular</option>
+      <option>⭐ Mala</option>
+    </select><br><br>
+
+    <label>Tu opinión:</label><br>
+    <textarea name="opinion" rows="4" placeholder="Escribe tu opinión..." required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+            </div>
+          </div>
+
+         
+
+        <script>
+          (function(){
+            const form = document.getElementById('feedback-form');
+            const msg = document.getElementById('feedback-msg');
+            const resetBtn = document.getElementById('feedback-reset');
+
+            form.addEventListener('submit', function(e){
+              msg.style.display = 'none';
+              const rating = form.querySelector('input[name="rating"]:checked');
+              const comments = document.getElementById('comments').value.trim();
+
+              if (!rating) {
+                e.preventDefault();
+                msg.style.color = 'red';
+                msg.textContent = 'Por favor elige una calificación.';
+                msg.style.display = 'block';
+                return;
+              }
+              if (comments.length < 5) {
+                e.preventDefault();
+                msg.style.color = 'red';
+                msg.textContent = 'Por favor escribe una opinión más detallada (mínimo 5 caracteres).';
+                msg.style.display = 'block';
+                return;
+              }
+
+              // formulario válido -> permitir envío normal a Formspree
+              msg.style.color = 'green';
+              msg.textContent = 'Enviando...';
+              msg.style.display = 'block';
+              // No preventDefault para que el POST se realice
+            });
+
+            resetBtn.addEventListener('click', function(){
+              form.reset();
+              msg.style.display = 'none';
+            });
+          })();
+        </script>
+      </aside>
+    </div> <!-- /.contenido-central -->
+
+    <!-- FOOTER -->
+    <footer class="Pie" role="contentinfo">
+      <div class="Pie-inner">
+        <p>sebastian cano jaime  &copy; 2025</p>
+        <div id="fecha-hora" aria-live="polite"></div>
+      </div>
+    </footer>
+  </div> 
+
+
+
+
+
+
+
